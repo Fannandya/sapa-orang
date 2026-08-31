@@ -5,46 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Halo Dek</title>
     <link rel="stylesheet" href="style.css">
-    <style>
-        /* Gaya untuk popup */
-        .popup {
-            display: none; /* Sembunyikan secara default */
-            position: fixed; /* Posisi tetap di layar */
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0,0,0,0.5); /* Latar belakang semi-transparan */
-            z-index: 1000; /* Pastikan popup di atas elemen lain */
-            justify-content: center; /* Pusatkan konten secara horizontal */
-            align-items: center; /* Pusatkan konten secara vertikal */
-        }
-        .popup-content {
-            background-color: #fefefe;
-            padding: 20px;
-            border: 1px solid #888;
-            width: 80%; /* Lebar popup */
-            max-width: 500px; /* Lebar maksimum */
-            text-align: center;
-            border-radius: 8px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
-        }
-        .close-button {
-            color: #aaa;
-            float: right;
-            font-size: 28px;
-            font-weight: bold;
-            cursor: pointer;
-            position: absolute;
-            top: 10px;
-            right: 10px;
-        }
-        .close-button:hover,
-        .close-button:focus {
-            color: black;
-            text-decoration: none;
-        }
-    </style>
+    <!-- Internal styles removed, all styles moved to style.css -->
 </head>
 <body>
     <div class="container">
@@ -62,30 +23,7 @@
         </div>
     </div>
 
-    <script>
-        // Dapatkan elemen tombol dan popup
-        const showMessageBtn = document.getElementById('showMessageBtn');
-        const messagePopup = document.getElementById('messagePopup');
-
-        // Fungsi untuk menampilkan popup
-        function showPopup() {
-            messagePopup.style.display = 'flex'; // Gunakan flex untuk centering
-        }
-
-        // Fungsi untuk menutup popup
-        function closePopup() {
-            messagePopup.style.display = 'none';
-        }
-
-        // Tambahkan event listener ke tombol
-        showMessageBtn.addEventListener('click', showPopup);
-
-        // Opsional: Tutup popup jika user mengklik di luar konten popup
-        window.onclick = function(event) {
-            if (event.target == messagePopup) {
-                messagePopup.style.display = "none";
-            }
-        }
-    </script>
+    <!-- Import external JavaScript file -->
+    <script src="script.js"></script>
 </body>
 </html>
