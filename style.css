@@ -29,10 +29,11 @@
     position: absolute;
     top: 10px;
     right: 10px;
+    transition: color 0.3s ease; /* Transisi halus untuk warna */
 }
 .close-button:hover,
 .close-button:focus {
-    color: black;
+    color: #f00; /* Ubah warna menjadi merah saat hover/focus untuk indikasi yang lebih jelas */
     text-decoration: none;
 }
 
@@ -83,10 +84,18 @@ button {
     cursor: pointer;
     font-size: 16px;
     margin-top: 15px;
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Transisi halus */
+    outline: none; /* Menghapus outline default untuk fokus */
 }
 
 button:hover {
     background-color: #45a049;
+    transform: translateY(-2px); /* Efek sedikit terangkat */
+}
+
+button:focus {
+    outline: 2px solid #4CAF50; /* Outline fokus yang terlihat */
+    outline-offset: 2px;
 }
 
 /* Media query untuk mobile-first (sudah ditangani oleh viewport, namun bisa ditambahkan lagi jika perlu) */
