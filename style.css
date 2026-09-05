@@ -50,8 +50,13 @@ body {
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    background-color: #ADD8E6; /* Light blue background */
+    background-color: #e0f7fa; /* Softer light blue background */
     color: #333;
+    /* Ornaments - Ensure 'egyptian_ornament.jpg' exists in assets/images/ for this to display */
+    background-image: url('../assets/images/egyptian_ornament.jpg'); /* Path relative to style.css */
+    background-repeat: repeat; /* Repeat the image if it's smaller than the screen */
+    background-size: 150px; /* Adjust ornament size, e.g., 150px. Could also be 'auto', 'cover', etc. */
+    background-attachment: fixed; /* Background stays fixed while scrolling */
 }
 
 .container {
