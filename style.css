@@ -116,14 +116,93 @@ button:focus {
     outline-offset: 2px;
 }
 
-/* Media query untuk mobile-first (sudah ditangani oleh viewport, namun bisa ditambahkan lagi jika perlu) */
+/* FAQ Section Styles */
+.faq-section {
+    margin-top: 40px;
+    text-align: left; /* Teks di dalam FAQ rata kiri */
+    width: 100%; /* Mengambil lebar container */
+}
+
+.faq-section h2 {
+    text-align: center; /* Judul FAQ rata tengah */
+    margin-bottom: 25px;
+    font-size: 1.75rem;
+    color: #1e293b;
+}
+
+.faq-item {
+    margin-bottom: 20px;
+    border-bottom: 1px solid #eee; /* Garis pemisah antar FAQ item */
+    padding-bottom: 20px;
+}
+
+.faq-item:last-child {
+    border-bottom: none; /* Tidak ada garis pemisah untuk item terakhir */
+    padding-bottom: 0;
+}
+
+.faq-question {
+    background: none;
+    border: none;
+    color: #333; /* Warna teks pertanyaan */
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    width: 100%;
+    text-align: left; /* Teks pertanyaan rata kiri */
+    padding: 10px 0;
+    margin-bottom: 10px;
+    transition: color 0.3s ease;
+    outline: none; /* Hapus outline default */
+    display: flex; /* Untuk menata ikon jika ada */
+    justify-content: space-between; /* Menempatkan ikon di kanan */
+    align-items: center;
+}
+
+.faq-question:hover {
+    color: #4CAF50; /* Warna hijau saat hover */
+}
+
+.faq-question::after { /* Menambahkan ikon '+' atau 'x' */
+    content: '+'; /* Default icon */
+    font-size: 1.3rem;
+    transition: transform 0.3s ease;
+}
+
+.faq-question.active::after {
+    content: '−'; /* Ubah icon menjadi '-' saat aktif */
+    transform: rotate(180deg); /* Jika ada rotasi, tapi '+' ke '−' sudah cukup */
+}
+
+.faq-answer {
+    max-height: 0; /* Sembunyikan jawaban secara default */
+    overflow: hidden;
+    transition: max-height 0.3s ease-out, padding 0.3s ease-out; /* Transisi halus saat membuka/menutup */
+    padding: 0 0; /* Padding awal 0 */
+    color: #5f6368;
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+.faq-answer p { /* Menyesuaikan margin p di dalam jawaban */
+    margin-top: 0.75rem; /* Default margin p */
+    margin-bottom: 0; /* Hapus margin bawah jika perlu */
+}
+
+.faq-answer.active {
+    max-height: 200px; /* Tinggi maksimum saat terbuka (sesuaikan jika perlu) */
+    padding: 15px 0; /* Tambahkan padding saat terbuka */
+}
+
+/* Media query untuk mobile-first */
 @media (max-width: 768px) {
-    .container {
-        width: 95%; /* Full width on smaller screens */
-        padding: 15px;
+    .faq-section h2 {
+        font-size: 1.5rem;
     }
-    button {
-        font-size: 14px;
-        padding: 8px 16px;
+    .faq-question {
+        font-size: 1rem;
+    }
+    .faq-answer {
+        font-size: 0.9rem;
     }
 }
